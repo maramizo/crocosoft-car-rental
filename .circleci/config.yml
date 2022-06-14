@@ -4,8 +4,8 @@ orbs:
   python: circleci/python@1.2
 
 workflows:
-  tests:
-   jobs:
+  sample:
+    jobs:
       - build-and-test
 
 
@@ -13,10 +13,10 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/python:3.10
-   steps:
+    steps:
       - checkout
       - python/install-packages:
           pkg-manager: pip
-     - run:
+      - run:
           name: Run tests
           command: pytest
