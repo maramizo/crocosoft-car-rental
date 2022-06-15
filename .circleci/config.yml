@@ -13,10 +13,11 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/python:3.10
+    parallelism: 4
     steps:
       - checkout
       - python/install-packages:
           pkg-manager: pip
       - run:
           name: Run tests
-          command: pytest
+          command: pytest $(ls ./tests | circleci tests split --split-by=timings)
