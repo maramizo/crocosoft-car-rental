@@ -15,7 +15,7 @@ sample_category = {
 
 sample_customer = {
     "name": "Mohammad Ayoub",
-    "email": "test@test.com",
+    "email": "test10@test.com",
     "number": "0123456789",
     "address": "Test Address",
 }
