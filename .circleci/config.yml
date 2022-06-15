@@ -20,4 +20,4 @@ jobs:
           pkg-manager: pip
       - run:
           name: Run tests
-          command: pytest $(ls ./tests | circleci tests split --split-by=timings)
+          command: pytest $(circleci tests glob tests/test*.py | circleci tests split --split-by=timings)
